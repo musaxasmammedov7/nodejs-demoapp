@@ -9,7 +9,7 @@ locals {
 
 # Path to the Terraform module
 terraform {
-  source = "../../../modules//vpc"
+  source = "../../modules//vpc"
 }
 
 # Inputs passed to the VPC module

@@ -7,11 +7,11 @@ locals {
 }
 
 dependency "vpc" {
-  config_path = "../../../vpc"
+  config_path = "../../vpc"
 }
 
 terraform {
-  source = "../../../../modules//sg"
+  source = "../../../modules//sg"
 }
 
 inputs = {
