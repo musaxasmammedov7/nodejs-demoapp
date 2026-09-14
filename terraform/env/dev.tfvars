@@ -20,4 +20,4 @@ cpu_target_value    = 70
 health_check_path   = "/"
 
 # Notification Configuration
-notification_email  = ""
+notification_email  = "musaxasmammedov77@gmail.com"
