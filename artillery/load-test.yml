@@ -1,0 +1,37 @@
+config:
+  target: "http://{{ $processEnvironment.TARGET_URL }}"
+  phases:
+    - duration: 60
+      arrivalRate: 10
+      name: "Warm-up"
+    - duration: 120
+      arrivalRate: 50
+      name: "Ramp up"
+    - duration: 300
+      arrivalRate: 100
+      name: "Sustained load"
+    - duration: 60
+      arrivalRate: 50
+      name: "Ramp down"
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+  - name: "Health Check and API"
+    weight: 70
+    flow:
+      - get:
+          url: "/"
+      - think: 1
+      - get:
+          url: "/api"
+
+  - name: "Static Content"
+    weight: 30
+    flow:
+      - get:
+          url: "/css/style.css"
+      - think: 1
+      - get:
+          url: "/js/app.js"
