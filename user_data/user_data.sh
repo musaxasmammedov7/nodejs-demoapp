@@ -37,8 +37,6 @@ services:
       - "8080:3000"
     environment:
       - NODE_ENV=production
-      - TODO_MONGO_CONNSTR=${docdb_connection_string}
-      - TODO_MONGO_DB=${docdb_db_name}
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/"]
