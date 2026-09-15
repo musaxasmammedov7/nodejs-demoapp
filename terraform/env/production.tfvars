@@ -18,6 +18,3 @@ desired_capacity    = 3
 # Scaling Configuration
 cpu_target_value    = 65
 health_check_path   = "/"
-
-# Notification Configuration
-notification_email  = "musaxasmammedov77@gmail.com"

@@ -7,3 +7,10 @@ myvalues.yaml
 secrets.sh
 .secrets
 myparams.json
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!terraform/env/terraform.tfvars.example

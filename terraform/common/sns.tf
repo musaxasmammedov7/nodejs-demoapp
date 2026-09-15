@@ -44,13 +44,13 @@ resource "aws_sns_topic_policy" "scaling_notifications" {
 data "aws_caller_identity" "current" {}
 
 ###############################################################################
-# Email Subscription (only if email provided)
+# Email Subscription (email loaded from AWS Secrets Manager - never from git)
 ###############################################################################
 resource "aws_sns_topic_subscription" "email" {
-  count     = var.notification_email != "" ? 1 : 0
+  count     = local.notification_email != "" ? 1 : 0
   topic_arn = aws_sns_topic.scaling_notifications.arn
   protocol  = "email"
-  endpoint  = var.notification_email
+  endpoint  = local.notification_email
 }
 
 ###############################################################################

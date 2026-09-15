@@ -63,12 +63,6 @@ variable "key_name" {
   default     = ""
 }
 
-variable "notification_email" {
-  description = "Email address for scaling event notifications"
-  type        = string
-  default     = "musaxasmammedov77@gmail.com"
-}
-
 variable "cpu_target_value" {
   description = "Target CPU utilization for scaling policy"
   type        = number
